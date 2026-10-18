@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+   
+    <meta charset="UTF-8">
+    <title>Marufa Birthday</title>
+
+    <style> 
+        #chapter1.active {
+    animation: fadeIn 1s ease;
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+body {
+    background: #111827;
+    color: white;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    padding: 40px 15px;
+    margin: 0;
+}
+
+h1, h2, h3, p {
+    text-align: center;
+}
+
+input[type="file"] {
+    display: block;
+    margin: 15px auto;
+}
+
+#myPhoto {
+    display: block;
+    max-width: 90%;
+    height: auto;
+    margin: 20px auto;
+}
+
+button {
+    display: inline-block;
+    background: #f9a8d4;
+    color: #111;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+}
+
+h1 {
+    color: #f9a8d4;
+    font-size: 40px;
+}
+button {
+    background: #f9a8d4;
+    color: #111;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+        #chapter1 {
+            display: none;
+        }
+    </style>
+</head>
+
+
+<body> 
+
+ 
+}
+    <div id="home">
+        <h1>শুভ জন্মদিন, "Marufa" 🎂</h1>
+        <p>তোমার জন্য একটি সুন্দর সারপ্রাইজ!</p>
+
+        <button onclick="showChapter()">
+            শুরু করি
+        </button>
+    </div>
+
+   <div id="chapter1">
+
+<h3>Wishing you lots of happiness, love, and success. May all your dreams come true! ❤️</h3>
+
+<input type="file" accept="image/*" onchange="showPhoto(event)">
+
+<br><br>
+
+<img id="myPhoto" width="250" hidden>
+
+<h2>শুভ জন্মদিন, Marufa! 🎁</h2>
+<p>তোমার জীবন আনন্দ ও সাফল্যে ভরে উঠুক।</p>
+
+<button onclick="goBack()">আগের পাতায় যাও</button>
+</div>
+
+    
+<script>
+    function showChapter() {
+        document.getElementById("home").style.display = "none";
+        document.getElementById("chapter1").style.display = "block";
+    }
+
+    function goBack() {
+        document.getElementById("chapter1").style.display = "none";
+        document.getElementById("home").style.display = "block";
+    }
+
+    function showPhoto(event) {
+        const file = event.target.files[0];
+
+        if (file) {
+            const photo = document.getElementById("myPhoto");
+            photo.src = URL.createObjectURL(file);
+            photo.hidden = false;
+        }
+    }
+</script>
+
+
+</body>
+</html>
